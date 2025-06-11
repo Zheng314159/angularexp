@@ -9,7 +9,7 @@ import { animationFrameScheduler, combineLatestAll, count, defaultIfEmpty, delay
   styleUrl: './test.scss'
 })
 export class Test implements OnInit {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object)  { }
+  constructor(@Inject(PLATFORM_ID) private platformId: object)  { }
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
 

@@ -40,18 +40,18 @@ export class Page3Component implements AfterViewInit {
         这里可以看到 map() 需要传1个参数，这里处理完成后再传给 订阅者就是直接处理后的结果。
     `;
 
-    constructor(@Inject(PLATFORM_ID) private platformId: Object, private cdr: ChangeDetectorRef) {}
+    constructor(@Inject(PLATFORM_ID) private platformId: object, private cdr: ChangeDetectorRef) {}
 
     ngAfterViewInit() {
         if (isPlatformBrowser(this.platformId)) {
-            let sumBtn = document.querySelectorAll('button.clickSum');
+            const sumBtn = document.querySelectorAll('button.clickSum');
             fromEvent(sumBtn, 'click')
                 .pipe(throttleTime(3000))
                 .subscribe(() => {this.sum++;
                   this.cdr.detectChanges(); // 确保视图更新
                 });
 
-            let mapBtn = document.querySelectorAll('button.clickMap');
+            const mapBtn = document.querySelectorAll('button.clickMap');
             fromEvent(mapBtn, 'click')
                 .pipe(
                     throttleTime(1000),

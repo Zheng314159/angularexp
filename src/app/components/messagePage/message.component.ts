@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component  } from '@angular/core';
 import { AComponent } from './A.component';
 import { BComponent } from './B.component';
 import { CommonModule } from '@angular/common';
@@ -15,9 +15,9 @@ import {  Subject } from 'rxjs';
 })
 export class MessageComponent  {
 
-    subject: any;
-    zhongJieA: any;
-    zhongJieB: any;
+    subject!: Subject<unknown>;
+    zhongJieA: unknown;
+    zhongJieB: unknown;
     ngOnInit(){
         this.subject = new Subject();
         this.subject.subscribe( x => this.zhongJieA = `收到了！${x}`);
@@ -37,13 +37,13 @@ export class MessageComponent  {
         import { Observable, Subject } from 'rxjs';
         @Injectable()
         export class MessageService {
-            private subject = new Subject<any>();
+            private subject = new Subject<unknown>();
 
-            send(message: any) {
+            send(message: unknown) {
                 this.subject.next(message);
             }
 
-            get(): Observable<any> {
+            get(): Observable<unknown> {
                 return this.subject.asObservable();
             }
         }
