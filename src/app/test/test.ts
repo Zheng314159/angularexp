@@ -1,6 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { animationFrameScheduler, combineLatestAll, count, defaultIfEmpty, delay, find, fromEvent, interval, map, mergeAll, observeOn, switchMap, take ,takeUntil,timer,timestamp,window, windowCount, windowWhen} from 'rxjs';
+import { interval} from 'rxjs';
 
 @Component({
   selector: 'app-test',
