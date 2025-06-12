@@ -1,0 +1,41 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-title>登录</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>邮箱</mat-label>
+          <input matInput type="email" formControlName="email" />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">请输入邮箱</mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">邮箱格式错误</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>密码</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">请输入密码</mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')"
+            >密码至少6位</mat-error
+          >
+        </mat-form-field>
+
+        <mat-checkbox formControlName="rememberMe">记住我</mat-checkbox>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="loading || loginForm.invalid"
+        >
+          {{ loading ? '登录中...' : '登录' }}
+        </button>
+
+        <div *ngIf="errorMessage" class="error-text">{{ errorMessage }}</div>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <a mat-button href="https://www.contemnewton.com/login" target="_blank">注册新账号</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

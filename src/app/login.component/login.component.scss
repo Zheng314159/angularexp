@@ -1,0 +1,39 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+
+  mat-card {
+    width: 360px;
+    padding: 24px;
+
+    mat-card-title {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .full-width {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .error-text {
+      color: #d32f2f;
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    mat-card-actions {
+      justify-content: center;
+      margin-top: 16px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

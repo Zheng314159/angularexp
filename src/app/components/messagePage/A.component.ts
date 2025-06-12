@@ -7,7 +7,7 @@ import { MessageService } from '../messageService';
 @Component({
       standalone: true,
     imports: [CommonModule, FormsModule],
-    selector: 'A1',
+    selector: 'app-a1', // 修改为 kebab-case 并以 app- 开头
     template: `
         <div>
             <input type="text" [(ngModel)]="inputText" name="text">
@@ -17,7 +17,7 @@ import { MessageService } from '../messageService';
 })
 
 export class AComponent {
-    inputText: any = "";
+    inputText: unknown = "";
 
     constructor(public srv: MessageService) { }
 
