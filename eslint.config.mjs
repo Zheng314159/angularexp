@@ -73,7 +73,7 @@ export default defineConfig([
     rules: {
       '@angular-eslint/template/no-negated-async': 'error',
       '@angular-eslint/template/banana-in-box': 'error',
-      '@angular-eslint/template/no-call-expression': 'error',
+      '@angular-eslint/template/no-call-expression': 'off',
       '@angular-eslint/template/no-distracting-elements': 'error',
       '@angular-eslint/template/no-any': 'error',
       '@angular-eslint/template/eqeqeq': 'error',
@@ -94,5 +94,15 @@ export default defineConfig([
         sourceType: 'module',
       },
     },
+  },
+  {
+    files: ['vite.config.ts'],
+    languageOptions: {
+      parserOptions: {
+        project: undefined,
+        tsconfigRootDir: undefined,
+      },
+    },
+    rules: {},
   },
 ]);
